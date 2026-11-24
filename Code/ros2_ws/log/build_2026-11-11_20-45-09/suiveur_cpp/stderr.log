@@ -1,0 +1,39 @@
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:[m[K In constructor ‘[01m[KMoteur_pid_noeud::Moteur_pid_noeud()[m[K’:
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:18:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_erreur_ligne[m[K’ was not declared in this scope
+   18 |         [01;31m[Ksub_erreur_ligne[m[K = this->create_subscription<std_msgs::msg::Float32>(
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:21:42:[m[K [01;31m[Kerror: [m[K‘[01m[KerrorCallback[m[K’ is not a member of ‘[01m[KMoteur_pid_noeud[m[K’
+   21 |             std::bind(&Moteur_pid_noeud::[01;31m[KerrorCallback[m[K, this, std::placeholders::_1)
+      |                                          [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:23:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_cmd_vel_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_cmd_vel[m[K’?
+   23 |         [01;31m[Kpub_cmd_vel_[m[K = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10); //buffer de message jusqu'a 10 messages avant suppression si pipeline occupé
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+      |         [32m[Kpub_cmd_vel[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:[m[K In member function ‘[01m[Kdouble Moteur_pid_noeud::calcul_PID(double)[m[K’:
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:87:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kki_[m[K’ was not declared in this scope; did you mean ‘[01m[Kki[m[K’?
+   87 |         double u = (erreur_p * kp) + ([01;31m[Kki_[m[K * erreur_i) + (kd_ * erreur_d);
+      |                                       [01;31m[K^~~[m[K
+      |                                       [32m[Kki[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:87:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kkd_[m[K’ was not declared in this scope; did you mean ‘[01m[Kkd[m[K’?
+   87 |         double u = (erreur_p * kp) + (ki_ * erreur_i) + ([01;31m[Kkd_[m[K * erreur_d);
+      |                                                          [01;31m[K^~~[m[K
+      |                                                          [32m[Kkd[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:90:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kerreur_prec_[m[K’ was not declared in this scope; did you mean ‘[01m[Kerreur_prec[m[K’?
+   90 |         [01;31m[Kerreur_prec_[m[K = erreur;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+      |         [32m[Kerreur_prec[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:[m[K In member function ‘[01m[Kvoid Moteur_pid_noeud::error_correction(std_msgs::msg::Float32_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:107:26:[m[K [01;31m[Kerror: [m[K‘[01m[KcomputePID[m[K’ was not declared in this scope
+  107 |         double command = [01;31m[KcomputePID[m[K(mesure);
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:109:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kbase_speed_[m[K’ was not declared in this scope; did you mean ‘[01m[Kbase_speed[m[K’?
+  109 |         cmd_msg.linear.x = [01;31m[Kbase_speed_[m[K;   // Vitesse d'avancement
+      |                            [01;31m[K^~~~~~~~~~~[m[K
+      |                            [32m[Kbase_speed[m[K
+[01m[K/home/tokec/ros2_ws/src/suiveur_cpp/src/node_pid.cpp:112:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_cmd_vel_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_cmd_vel[m[K’?
+  112 |         [01;31m[Kpub_cmd_vel_[m[K->publish(cmd_msg); //envoie du message
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+      |         [32m[Kpub_cmd_vel[m[K
+gmake[2]: *** [CMakeFiles/pid_node_cpp.dir/build.make:76: CMakeFiles/pid_node_cpp.dir/src/node_pid.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/pid_node_cpp.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
