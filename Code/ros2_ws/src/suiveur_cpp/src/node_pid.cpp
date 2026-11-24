@@ -16,7 +16,7 @@ public:
 
         pub_cmd_vel_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
 
-        RCLCPP_INFO(this->get_logger(), "Nœud PID C++ initialisé pour la Maker Line !");
+        RCLCPP_INFO(this->get_logger(), "Nœud PID C++ initialisé ");
         }
 
 private:
